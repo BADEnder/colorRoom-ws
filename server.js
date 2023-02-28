@@ -6,17 +6,19 @@ const app = express()
 
 const PORT = process.env.PORT || 3500
 
+const {logger} = require('./middleware/logEvent')
+
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use('/', express.static(path.join(__dirname, 'public')))
 
+app.use(logger)
 
 app.use('/', require('./routes/home'))
 app.use('/match-list', require('./routes/match-list'))
-app.use('/main-list', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'main-list.html'))
-})
+app.use('/main-list', require('./routes/main-list'))
 app.use('/member', require('./routes/member'))
+app.use('/log-in', require('./routes/log-in'))
 
 app.listen(PORT, () => {
     console.log(`Server is running at ${PORT}`)

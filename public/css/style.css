@@ -1,5 +1,6 @@
 @import url('general/elem-reset.css');
 @import url('general/bootstrap.css');
+@import url('general/block-arrange.css');
 
 * {
     margin: 0;
@@ -59,10 +60,23 @@ footer {
 }
 
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
+.btn {
+    background-color: rgb(202, 255, 132);
+    box-shadow: 0px 0px 15px rgb(202, 255, 123);
+    border: solid 0.1px rgb(202, 255, 123);
+    border-radius: 5px;
 
-
+    cursor: pointer;
+    padding: 0.2rem;
+    font-size: 1.2rem;
+} 
 
 
 
