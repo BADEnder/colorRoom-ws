@@ -4,7 +4,7 @@
 const {Client} = require('pg')
 
 const config = {
-    username: 'Ender',
+    username: 'root',
     password: 'tiger1989',
     host: '127.0.0.1',
     post: 5432

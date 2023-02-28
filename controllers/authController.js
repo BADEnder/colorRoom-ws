@@ -1,3 +1,5 @@
-const dotenv = require('dotenv').config
+const handleLogin = (req, res) => {
 
-console.log(process.env.PORT)
+}
+
+module.exports = {handleLogin}
