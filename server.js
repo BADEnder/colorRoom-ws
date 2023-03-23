@@ -28,6 +28,7 @@ app.use('/log-in', require('./routes/log-in'))
 
 // API
 app.use('/api/auth', require('./routes/api/auth'))
+app.use('/api/postData', require('./routes/api/postData'))
 
 app.listen(PORT, () => {
     console.log(`Server is running at ${PORT}`)
