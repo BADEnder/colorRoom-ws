@@ -11,6 +11,10 @@
     <script src="/js/vue@3.2.47-prod.js"></script>
     <script src="/js/template.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <script src="/js/xlsx.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script> -->
+
 </head>
 <body>
     <header id="header" class="container" v-cloak></header>
@@ -20,6 +24,13 @@
         <div id="all-list">
         </div>
         <button onclick="submitRows()" >提交</button>
+    </main>
+    <main class="container">
+        <!-- <label for="excel"></label>
+        <input type="file" name="file" id="excel"> -->
+        <input type="file" id="input" onchange="handleFile()">
+        <table id="output"></table>
+        <button onclick="submitExcel()" >提交</button>
     </main>
 
     <footer id="footer" class="container"></footer>
