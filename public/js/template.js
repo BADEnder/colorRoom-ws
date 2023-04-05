@@ -8,7 +8,7 @@ const headerNavTemplate = Vue.createApp({
                     url: "/"
                 },
                 {
-                    name: "需求管理",
+                    name: "需求導入",
                     url: "/main-list"
                 },
                 {

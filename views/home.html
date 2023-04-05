@@ -9,14 +9,47 @@
     <link rel="stylesheet" href="/css/home.css">
 
     <script src="/js/vue@3.2.47-prod.js"></script>
-    <script src="/js/home.js" defer></script>
+    
     <script src="/js/template.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    
+
+    <script src="/js/home.js" defer></script>
+
 </head>
 <body>
     <header id="header" class="container" v-cloak></header>
 
-    <main>
-        <div class="hightlight"> Hello this is home page.</div>
+    <main class="container py-3">
+        <section class="first-section">
+            <div>
+                <label for="begin">起始日期: </label>
+                <input type="date"  id="start-date">
+    
+                <label for="end">結束日期: </label>
+                <input type="date" id="end-date">
+                
+                <input type="submit" value="提交" onclick="check_fun()">
+    
+                <div class="center" style="height:500px" >
+                    <div id="graph"></div>
+                </div>
+            </div>
+
+            <div>
+                <label for="pno">需求單號: </label>
+                <input type="text" id="pno">
+                <input type="submit" value="提交" onclick="check_fun()">
+
+                <div class="center" style="height:500px" >
+                    <div id="situation-graph"></div>
+                </div>
+            </div>
+        </section>
+
+        <canvas id="myChart"></canvas>
     </main>
 
     <footer id="footer" class="container"></footer>

@@ -1,7 +1,21 @@
 @import url('style.css');
-
+/* 
 main {
     display:flex;
     align-items: center;
     justify-content: center;
+} */
+
+label {
+    display: inline-block
+}
+
+
+
+.first-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* background-color: rgba(198, 244, 239, 0.8); */
 }
