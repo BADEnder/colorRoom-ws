@@ -16,6 +16,7 @@ const submitLogIn = async () => {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             headers: {
               "Content-Type": "application/json",
+              "Accept": "*/*"
             },
             body: JSON.stringify({
                 user: user.value,
@@ -23,11 +24,13 @@ const submitLogIn = async () => {
             }),
         })
         
-        console.log(res)
+        // console.log(res)
+        // console.log(res.body)
+        const data = await res.json()
+
         if (res.status !== 200) {
-            alert(`${res.body.msg}`)
+            alert(`${data.msg}`)
         } else {
-            alert("登錄成功")
             window.location.href = '/'
         }
 
