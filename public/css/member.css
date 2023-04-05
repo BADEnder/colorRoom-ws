@@ -5,3 +5,12 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+input {
+    margin: 0.5rem 0rem
+}
+
+.submit {
+    position: absolute;
+    bottom: 3rem
+}

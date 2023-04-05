@@ -1,0 +1,47 @@
+const user = document.querySelector('#user')
+const pwd = document.querySelector('#pwd')
+const submit = document.querySelector('#submit')
+
+const nav = document.querySelector('header nav')
+const header_but = document.querySelector('header button')
+nav.style.display = 'none'
+header_but.style.display = 'none'
+
+
+const submitLogIn = async () => {
+
+    const url = `http://127.0.0.1/api/auth `
+    try {
+        const res = await fetch(url, {
+            method: "POST", // *GET, POST, PUT, DELETE, etc.
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                user: user.value,
+                pwd: pwd.value
+            }),
+        })
+        
+        console.log(res)
+        if (res.status !== 200) {
+            alert(`${res.body.msg}`)
+        } else {
+            alert("登錄成功")
+            window.location.href = '/'
+        }
+
+    } catch (err) {
+        alert("伺服器出錯")
+    }
+}
+
+pwd.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        submit.click()
+    }
+})
+
+
+
+

@@ -11,27 +11,19 @@ a:hover, a:focus {
     color: gray
 }
 
-li {
+li, label, input, button {
     display: inline-block;
 }
 
-label {
-    display: inline-block;
-}
 
-input {
-    display: inline-block
-}
-
-
-input {
+/* input {
     
     background-color: rgb(192, 212, 212);
     border:rgb(207, 238, 232) 1px solid;
     border-radius: 5px; 
 
     font-size: 1.2rem;
-} 
+}  */
 
 
 input:focus, button:focus {

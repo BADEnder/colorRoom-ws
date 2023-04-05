@@ -1,0 +1,16 @@
+@import url('style.css');
+
+main {
+    position: relative;
+}
+
+input, button, .submit{
+    margin: 0.5rem 0rem
+}
+
+
+
+
+table * {
+    padding: 0.2rem
+}

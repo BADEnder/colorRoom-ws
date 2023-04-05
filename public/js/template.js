@@ -21,7 +21,7 @@ const headerNavTemplate = Vue.createApp({
                 },
                 {
                     name: "登出",
-                    url: "/member"
+                    url: "/api/log-out"
                 },
 
             ]

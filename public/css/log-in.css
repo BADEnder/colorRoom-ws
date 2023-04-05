@@ -1,0 +1,12 @@
+@import url('./style.css');
+
+
+.bd {
+    border: 5px double black;
+    border-radius: 10px;
+    padding: 3rem
+} 
+
+.bd * {
+    margin: 0.5rem 0 
+}

@@ -1,13 +1,23 @@
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 
 
-const pwd = 'P@ssw0rd'
+// const pwd = 'P@ssw0rd'
 
-const genHashedPwd = async (pwd) => {
-    const pwdHashed = await bcrypt.hash(pwd, 10)
+// const genHashedPwd = async (pwd) => {
+//     const pwdHashed = await bcrypt.hash(pwd, 10)
 
-    console.log(pwdHashed)
+//     console.log(pwdHashed)
+// }
+
+
+// genHashedPwd(pwd)
+
+
+const a = 123
+
+const b = {
+    test: "hello world",
+    a
 }
 
-
-genHashedPwd(pwd)
+console.log(b)

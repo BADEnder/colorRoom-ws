@@ -6,16 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WS</title>
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/main-list.css">
 
     <script src="/js/vue@3.2.47-prod.js"></script>
     <script src="/js/template.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <script src="/js/xlsx.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script> -->
+
 </head>
 <body>
     <header id="header" class="container" v-cloak></header>
 
-    <main></main>
+    <!-- <main class="container">
+        <button onclick="addRows()" >新增</button>
+        <div id="all-list">
+        </div>
+        <button onclick="submitRows()" >提交</button>
+    </main> -->
+    <main class="container">
+        <button for="input" class="btn" onclick="document.querySelector('#input').click()">選擇配方表</button>
+        <button class="btn" onclick="submitExcel()" >提交</button>
+        <input type="file" id="input" accept=".xlsx"style="display:none;" onchange="handleFile()">
+
+        <table id="output" border="1px">
+            <th>件號</th>
+            <th>料號描述</th>
+            <th>總份數</th>
+            
+        </table>
+    </main>
 
     <footer id="footer" class="container"></footer>
+
+    <script src="/js/main-list-fd.js"></script>
 </body>
 </html>

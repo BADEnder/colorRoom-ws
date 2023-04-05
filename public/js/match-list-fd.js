@@ -130,8 +130,6 @@ const postData = async(url, data) => {
         alert("上傳失敗")
     }
 
-
-
     
 
 }

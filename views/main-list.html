@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WS</title>
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/main-list.css">
 
     <script src="/js/vue@3.2.47-prod.js"></script>
     <script src="/js/template.js" defer></script>
@@ -19,18 +19,23 @@
 <body>
     <header id="header" class="container" v-cloak></header>
 
-    <main class="container">
+    <!-- <main class="container">
         <button onclick="addRows()" >新增</button>
         <div id="all-list">
         </div>
         <button onclick="submitRows()" >提交</button>
-    </main>
+    </main> -->
     <main class="container">
-        <!-- <label for="excel"></label>
-        <input type="file" name="file" id="excel"> -->
-        <input type="file" id="input" onchange="handleFile()">
-        <table id="output"></table>
-        <button onclick="submitExcel()" >提交</button>
+        <button for="input" class="btn" onclick="document.querySelector('#input').click()">選擇需求表</button>
+        <button class="btn" onclick="submitExcel()" >提交</button>
+        <input type="file" id="input" accept=".xlsx"style="display:none;" onchange="handleFile()">
+
+        <table id="output" border="1px">
+            <th>件號</th>
+            <th>料號描述</th>
+            <th>總份數</th>
+            
+        </table>
     </main>
 
     <footer id="footer" class="container"></footer>
