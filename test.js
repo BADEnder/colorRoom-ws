@@ -13,22 +13,32 @@
 // genHashedPwd(pwd)
 
 
-const a = [
-    {
-        user: "Ender",
-        pwd: "123",
-        age: "28"
+const test = async () => {
+    let b = require('./database/test.json')
 
-    },
-    {
-        user: "Kelly",
-        pwd: "456",
-        age: "28"
-    }
-]
 
-const test1 = a.find(person => person.age == 28)
-const test2 = a.filter(person => person.age ==28)
+    console.log(b)
+    
+    
+    // b = 0
+    
+    // console.log(b)
+    
+    const fsPromise = require('fs').promises
+    
+    let data = await fsPromise.readFile('./database/test.json', 'utf-8')
 
-console.log(test1)
-console.log(test2)
+    data = JSON.parse(data) 
+
+    data[0]['age'] = 34
+
+    await fsPromise.writeFile('./database/test.json', JSON.stringify(data))
+    console.log(data)
+    
+    delete b
+    b= require('./database/test.json')
+    console.log(b)
+}
+
+
+test()

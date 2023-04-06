@@ -12,7 +12,7 @@ const verifyRefreshToken = async (req, res, next) => {
 
     const refreshToken = req.cookies.jwt
 
-    let usersDB = await fsPromise.readFile(path.join(__dirname, '..', 'database', 'accounts.json'))
+    let usersDB = await fsPromise.readFile(path.join(__dirname, '..', 'database', 'accounts.json'), 'utf-8')
     usersDB = JSON.parse(usersDB)
     // console.log(usersDB)
 
