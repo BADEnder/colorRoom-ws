@@ -1,10 +1,11 @@
+require('dotenv').config()
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const path = require('path')
 const fsPromise = require('fs').promises
 
 const usersDB = {
-    users: require('../database/account.json'),
+    users: require('../database/accounts.json'),
     setUsers: function (users) {
         this.users = users
     }
@@ -44,11 +45,11 @@ const postAuth = async (req, res) => {
         )
 
         const otherUser = usersDB.users.filter( person => person.username !== foundUser.username)
-        const currentUSer = {...foundUser, refreshToken}
-        usersDB.setUsers([...otherUser, currentUSer])
+        const currentUser = {...foundUser, refreshToken}
+        usersDB.setUsers([...otherUser, currentUser])
 
         await fsPromise.writeFile(
-            path.join(__dirname, '..', 'database', 'account.json'),
+            path.join(__dirname, '..', 'database', 'accounts.json'),
             JSON.stringify(usersDB.users)
         )
         
@@ -59,7 +60,7 @@ const postAuth = async (req, res) => {
         })
 
     } else {
-        res.status(401).json( {
+        res.status(403).json( {
             msg: "密碼錯誤"
         })
     }

@@ -1,21 +1,24 @@
+require('dotenv').config()
 const jwt = require('jsonwebtoken')
+const path = require('path')
 
-const usersDB = {
-    users: require('../database/account.json'),
-    setUsers: function (users) {
-        this.users = users
-    }
-}
+const fsPromise = require('fs').promises
 
-const verifyRefreshToken = (req, res, next) => {
+const verifyRefreshToken = async (req, res, next) => {
 
-    if (!req.cookies?.jwt) {
+    if (!req.cookies.jwt) {
         return res.redirect('/log-in')
     }
 
     const refreshToken = req.cookies.jwt
-    const foundUser = usersDB.users.find( person => person.refreshToken == refreshToken )
+
+    let usersDB = await fsPromise.readFile(path.join(__dirname, '..', 'database', 'accounts.json'))
+    usersDB = JSON.parse(usersDB)
+    // console.log(usersDB)
+
+    const foundUser = usersDB.find( person => person.refreshToken == refreshToken )
     if (!foundUser) {
+        console.log('i cannot find the user')
         return res.redirect('/log-in')
     } 
 

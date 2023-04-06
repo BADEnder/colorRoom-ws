@@ -13,11 +13,22 @@
 // genHashedPwd(pwd)
 
 
-const a = 123
+const a = [
+    {
+        user: "Ender",
+        pwd: "123",
+        age: "28"
 
-const b = {
-    test: "hello world",
-    a
-}
+    },
+    {
+        user: "Kelly",
+        pwd: "456",
+        age: "28"
+    }
+]
 
-console.log(b)
+const test1 = a.find(person => person.age == 28)
+const test2 = a.filter(person => person.age ==28)
+
+console.log(test1)
+console.log(test2)

@@ -32,6 +32,7 @@ const submitLogIn = async () => {
             alert(`${data.msg}`)
         } else {
             window.location.href = '/'
+            // alert(`${data.msg}`)
         }
 
     } catch (err) {
