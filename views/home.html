@@ -24,27 +24,27 @@
 
     <main class="container py-3">
         <section class="first-section">
-            <div>
-                <label for="begin">起始日期: </label>
+            <div class="graph mx-3">
+                <label for="start-date">起始日期: </label>
                 <input type="date"  id="start-date">
     
-                <label for="end">結束日期: </label>
+                <label for="end-date">結束日期: </label>
                 <input type="date" id="end-date">
                 
                 <input type="submit" value="提交" onclick="check_fun()">
     
-                <div class="center" style="height:500px" >
-                    <div id="graph"></div>
+                <div class="center"  >
+                    <div id="graph" ></div>
                 </div>
             </div>
 
-            <div>
+            <div class="graph mx-3">
                 <label for="pno">需求單號: </label>
                 <input type="text" id="pno">
                 <input type="submit" value="提交" onclick="check_fun()">
 
-                <div class="center" style="height:500px" >
-                    <div id="situation-graph"></div>
+                <div class="center">
+                    <div id="situation-graph" ></div>
                 </div>
             </div>
         </section>
