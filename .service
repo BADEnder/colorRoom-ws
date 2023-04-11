@@ -1,0 +1,17 @@
+[Unit]
+
+Description=nothing
+After=network.target
+
+
+[Service]
+##Environment=PORT=3500
+Type=simeple
+user=root
+##ExecStart=/root/colorRoom-ws/startup.sh
+ExecStart= node /root/colorRoom-ws/server.js
+Restart=on-failure
+
+
+[Install]
+WantedBy=multi-user.target
