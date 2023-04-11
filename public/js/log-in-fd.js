@@ -10,7 +10,7 @@ header_but.style.display = 'none'
 
 const submitLogIn = async () => {
 
-    const url = `http://127.0.0.1/api/auth `
+    const url = `/api/auth `
     try {
         const res = await fetch(url, {
             method: "POST", // *GET, POST, PUT, DELETE, etc.

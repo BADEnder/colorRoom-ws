@@ -73,7 +73,7 @@ const submitExcel = () => {
     }
     console.log(data)
 
-    postData('http://127.0.0.1/api/postData', data)
+    postData('/api/postData', data)
     data = []
 }
 
